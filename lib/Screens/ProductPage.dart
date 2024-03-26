@@ -54,7 +54,7 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: myColors.secoundColor,
+      backgroundColor: Color.fromARGB(255, 217, 217, 217),
       appBar: appBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 1),
@@ -89,68 +89,122 @@ class _ProductPageState extends State<ProductPage> {
     );
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
   Container shoppingBar() {
     return Container(
-      height: 150,
-      padding: EdgeInsets.all(15),
-      color: myColors.secoundColor,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(" \$" + widget.product.price.toString(),
-                  style: GoogleFonts.imprima(
-                      fontSize: 30, fontWeight: FontWeight.bold)),
-              Row(
-                children: [
-                  IconButton(
-                      autofocus: true,
-                      onPressed: () => setState(() {
-                            _quantity > 1 ? _quantity-- : null;
-                            widget.product.quantity = _quantity;
-                          }),
-                      icon: Icon(Icons.remove)),
-                  //quantity
-                  SizedBox(
-                    width: 20,
-                    child: Center(
-                      child: Text(_quantity.toString(),
-                          style: GoogleFonts.imprima(fontSize: 18)),
-                    ),
-                  ),
-                  //plusbutton
-                  IconButton(
-                      autofocus: true,
-                      onPressed: () {
-                        setState(() {
-                          _quantity++;
-                          widget.product.quantity = _quantity;
-                        });
-                      },
-                      icon: Icon(Icons.add)),
-                ],
-              )
-            ],
-          ),
-          AddToCart(),
-        ],
-      ),
-    );
+            height: 150,
+            padding: EdgeInsets.all(15),
+            color: myColors.secoundColor,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(" \$" + widget.product.price.toString(),
+                        style: GoogleFonts.imprima(
+                            fontSize: 30, fontWeight: FontWeight.bold)),
+                    Row(
+                      children: [
+                        IconButton(
+                            autofocus: true,
+                            onPressed: () => setState(() {
+                                  _quantity > 1 ? _quantity-- : null;
+                                  widget.product.quantity = _quantity;
+                                }),
+                            icon: Icon(Icons.remove)),
+                        //quantity
+                        SizedBox(
+                          width: 20,
+                          child: Center(
+                            child: Text(_quantity.toString(),
+                                style: GoogleFonts.imprima(fontSize: 18)),
+                          ),
+                        ),
+                        //plusbutton
+                        IconButton(
+                            autofocus: true,
+                            onPressed: () {
+                              setState(() {
+                                _quantity++;
+                                widget.product.quantity = _quantity;
+                              });
+                            },
+                            icon: Icon(Icons.add)),
+                      ],
+                    )
+                  ],
+                ),
+                AddToCart(),
+              ],
+            ),
+          );
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   AppBar appBar() {
     return AppBar(
       backgroundColor: Colors.transparent,
-      iconTheme: IconThemeData(color: Colors.black),
       elevation: 0,
       actions: [
         favorite_add_and_remove(),
       ],
     );
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   Padding favorite_add_and_remove() {
     return Padding(
@@ -175,6 +229,23 @@ class _ProductPageState extends State<ProductPage> {
       ]),
     );
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   Center AddToCart() {
     return Center(
@@ -205,6 +276,33 @@ class _ProductPageState extends State<ProductPage> {
       ),
     );
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   Container Products_info() {
     return Container(
