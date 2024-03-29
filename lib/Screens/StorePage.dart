@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hoodedhaven/tools/myColor.dart';
 import '../tools/Products/Store.dart';
 import '../tools/ResposiveSize.dart';
 import 'ProductPage.dart';
@@ -23,7 +25,7 @@ class _StorePageState extends State<StorePage> {
             child: Text(
               "Products",
               style: GoogleFonts.jockeyOne(
-                  fontWeight: FontWeight.bold, fontSize: 28),
+                  fontWeight: FontWeight.bold, fontSize: 28.sp),
             ),
           ),
           product_UI(),
@@ -34,85 +36,77 @@ class _StorePageState extends State<StorePage> {
 
   Expanded product_UI() {
     return Expanded(
-          child: GridView.builder(
-            physics: const AlwaysScrollableScrollPhysics(),
-            itemCount: Store.products.length,
-            padding: const EdgeInsets.fromLTRB(36, 0, 34, 20),
-            scrollDirection: Axis.vertical,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 9 / 16,
-            ),
-            itemBuilder: ((context, index) {
-              return InkWell(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30),
-                  child: Card(
-                    color: const Color.fromARGB(255, 217, 217, 217),
-                    shape: Border.all(
-                        color: Colors.black,
-                        width: ResponsiveSize.responsiveSize(context, 2)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Image.asset(
-                            Store.products[index].imagepath.toString()),
-                        Container(
-                          width: ResponsiveSize.responsiveSize(context, 100),
-                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 15),
-                          child: Column(
+      child: GridView.builder(
+        physics: const AlwaysScrollableScrollPhysics(),
+        itemCount: Store.products.length,
+        padding: const EdgeInsets.fromLTRB(36, 0, 34, 20),
+        scrollDirection: Axis.vertical,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 9 / 16,
+        ),
+        itemBuilder: ((context, index) {
+          return InkWell(
+            child: ClipRRect(
+              child: Card(
+                color: myColors.secoundColor,
+                shape: Border.all(color: Colors.black, width: 1),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset(Store.products[index].imagepath.toString()),
+                    Container(
+                      width: 100.w,
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 15),
+                      child: Column(
+                        children: [
+                          Text(
+                            Store.products[index].title.toString(),
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 3,
+                            style: GoogleFonts.inika(
+                                fontWeight: FontWeight.bold, fontSize: 12.sp),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                Store.products[index].title.toString(),
-                                textAlign: TextAlign.center,
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 3,
-                                style: GoogleFonts.inika(
+                                Store.products[index].promoprice != null
+                                    ? "\$" +
+                                        Store.products[index].promoprice
+                                            .toString()
+                                    : "",
+                                style: GoogleFonts.imprima(
+                                    decoration: TextDecoration.lineThrough,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 20),
+                                    fontSize: 15.sp),
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    Store.products[index].promoprice != null
-                                        ? "\$" +
-                                            Store.products[index].promoprice
-                                                .toString()
-                                        : "",
-                                    style: GoogleFonts.imprima(
-                                        decoration:
-                                            TextDecoration.lineThrough,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 25),
-                                  ),
-                                  Text(
-                                    "\$" +
-                                        Store.products[index].price
-                                            .toString(),
-                                    style: GoogleFonts.imprima(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 25),
-                                  ),
-                                ],
+                              Text(
+                                "\$" + Store.products[index].price.toString(),
+                                style: GoogleFonts.imprima(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25.sp),
                               ),
                             ],
                           ),
-                        )
-                      ],
-                    ),
-                  ),
+                        ],
+                      ),
+                    )
+                  ],
                 ),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              ProductPage(product: Store.products[index])));
-                },
-              );
-            }),
-          ),
-        );
+              ),
+            ),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(product: Store.products[index])));
+            },
+          );
+        }),
+      ),
+    );
   }
 }

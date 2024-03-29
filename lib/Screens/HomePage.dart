@@ -1,5 +1,6 @@
 import 'package:drop_shadow_image/drop_shadow_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hoodedhaven/Screens/ProductPage.dart';
 import 'package:hoodedhaven/Screens/StorePage.dart';
 import 'package:hoodedhaven/tools/Products/Product.dart';
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Hooded Haven", style: GoogleFonts.inika(fontSize: 20)),
+              Text("Hooded Haven", style: GoogleFonts.inika(fontSize: 20.sp)),
             ],
           ),
           SizedBox(
@@ -121,7 +122,8 @@ class _HomePageState extends State<HomePage> {
           Text(
             textAlign: TextAlign.center,
             e.title.toString(),
-            style: GoogleFonts.inika(fontSize: 13, fontWeight: FontWeight.bold),
+            style:
+                GoogleFonts.inika(fontSize: 13.sp, fontWeight: FontWeight.bold),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -130,10 +132,12 @@ class _HomePageState extends State<HomePage> {
                 "\$" + e.promoprice.toString(),
                 style: GoogleFonts.imprima(
                     decoration: TextDecoration.lineThrough,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.sp),
               ),
               Text("\$" + e.price.toString(),
-                  style: GoogleFonts.imprima(fontWeight: FontWeight.bold)),
+                  style: GoogleFonts.imprima(
+                      fontWeight: FontWeight.bold, fontSize: 20.sp)),
             ],
           )
         ],
@@ -152,7 +156,7 @@ class _HomePageState extends State<HomePage> {
         child: Center(
             child: Text(
           "Promotion",
-          style: GoogleFonts.inika(fontSize: 29),
+          style: GoogleFonts.inika(fontSize: 29.sp),
         )));
   }
 }

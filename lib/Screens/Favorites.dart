@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hoodedhaven/Screens/CartPage.dart';
 import 'package:hoodedhaven/Screens/ProductPage.dart';
 import 'package:hoodedhaven/tools/Products/Product.dart';
@@ -69,7 +70,7 @@ class _FavoriteState extends State<Favorite> {
             children: [
               Image.asset(
                 favorites.elementAt(index).imagepath.toString(),
-                height: 100,
+                height: 100.h,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,8 +153,8 @@ class _FavoriteState extends State<Favorite> {
               delegate: customSearch(favorites: getfavorites()));
         },
         child: Container(
-          width: ResponsiveSize.responsiveSize(context, 280),
-          height: 30,
+          width: 280.w,
+          height: 30.h,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               border: Border.all(color: Colors.black)),
