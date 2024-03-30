@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:hoodedhaven/pages/RegisterPage.dart';
-import 'package:hoodedhaven/tools/responsivesize.dart';
+import 'package:hoodedhaven/Screens/RegisterPage.dart';
+import 'package:hoodedhaven/tools/Resposivesize.dart';
 
 class LoginPage extends StatelessWidget {
    const LoginPage({super.key});
