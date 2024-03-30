@@ -1,8 +1,8 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:hoodedhaven/pages/login_page.dart';
-import 'package:hoodedhaven/tools/responsivesize.dart';
+import 'package:hoodedhaven/Screens/login_page.dart';
+import 'package:hoodedhaven/tools/Resposivesize.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
