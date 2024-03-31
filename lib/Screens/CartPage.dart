@@ -134,6 +134,7 @@ class _CartPageState extends State<CartPage> {
                           ),
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
@@ -155,9 +156,6 @@ class _CartPageState extends State<CartPage> {
                                     },
                                     icon: Icon(Icons.add)),
                               ],
-                            ),
-                            SizedBox(
-                              width: 22,
                             ),
                             IconButton(
                                 onPressed: () {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hoodedhaven/Screens/LoginPage.dart';
 import 'package:hoodedhaven/tools/ResposiveSize.dart';
 
@@ -48,7 +49,7 @@ class GetStartedPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, '/loginpage');
                   },
-                  minWidth: 250,
+                  minWidth: 250.w,
                   height: 50,
                   color: Color.fromARGB(255, 255, 249, 236),
                   shape: RoundedRectangleBorder(
