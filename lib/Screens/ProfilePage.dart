@@ -25,20 +25,34 @@ class ProfilePage extends StatelessWidget {
             "User Name",
             style: TextStyle(fontSize: 20),
           ),
-          List_Tile(context, "View Orders History"),
-          List_Tile(context, "Favorites"),
-          List_Tile(context, "Account Settings"),
+          List_Tile(context, "View Orders History", "viewordershistory"),
+          List_Tile(context, "Favorites", "favorite"),
+          List_Tile(context, "AccountSettings", "accountsettings"),
           SizedBox(
             height: 20,
           ),
           Divider(),
-          List_Tile(context, "Sign Out"),
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0, right: 16, top: 16),
+            child: Material(
+              elevation: 1.0,
+              borderRadius: BorderRadius.circular(8.0),
+              child: ListTile(
+                trailing: Icon(Icons.keyboard_arrow_right_rounded),
+                title: Text(
+                  "Sign Out",
+                  style: GoogleFonts.roboto(fontSize: 16),
+                ),
+                onTap: () => Navigator.pop(context),
+              ),
+            ),
+          )
         ],
       ),
     );
   }
 
-  Padding List_Tile(BuildContext context, String title) {
+  Padding List_Tile(BuildContext context, String title, String path) {
     return Padding(
       padding: const EdgeInsets.only(left: 16.0, right: 16, top: 16),
       child: Material(
@@ -50,7 +64,7 @@ class ProfilePage extends StatelessWidget {
             title,
             style: GoogleFonts.roboto(fontSize: 16),
           ),
-          onTap: () => Navigator.pushNamed(context, "/favorite"),
+          onTap: () => Navigator.pushNamed(context, "/$path"),
         ),
       ),
     );

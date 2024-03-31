@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hoodedhaven/Buttomnavbar/Buttomnavbar.dart';
-import 'package:hoodedhaven/Screens/Favorites.dart';
+import 'package:hoodedhaven/Screens/ProfileScreens/Favorites.dart';
 import 'package:hoodedhaven/Screens/GetStartedPage.dart';
 import 'package:hoodedhaven/Screens/HomePage.dart';
 import 'package:hoodedhaven/Screens/LoginPage.dart';
 import 'package:hoodedhaven/Screens/LoginPage.dart';
+import 'package:hoodedhaven/Screens/ProfileScreens/accountSettings.dart';
+import 'package:hoodedhaven/Screens/ProfileScreens/viewOrdersHistory.dart';
 import 'package:hoodedhaven/Screens/StorePage.dart';
 import 'package:hoodedhaven/tools/Products/Store.dart';
 import 'package:hoodedhaven/tools/Profile.dart';
@@ -46,7 +48,9 @@ class _MyAppState extends State<MyApp> {
             '/bottomnavbar': (context) => const bottomnavbar(),
             '/home': (context) => HomePage(),
             '/store': (context) => const StorePage(),
+            '/viewordershistory': (context) => const ViewOrdersHistory(),
             '/favorite': (context) => const Favorite(),
+            '/accountsettings': (context) => const AccountSettings(),
           },
         );
       },

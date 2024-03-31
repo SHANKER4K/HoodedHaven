@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:hoodedhaven/Screens/CartPage.dart';
 import 'package:hoodedhaven/Screens/ProfilePage.dart';
+import 'package:hoodedhaven/tools/myColor.dart';
 import '../Screens/HomePage.dart';
 import '../Screens/StorePage.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -21,7 +22,7 @@ class _bottomnavbarState extends State<bottomnavbar> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: myColors.primaryColor,
           body: IndexedStack(
               index: currentIndex,
               children: [HomePage(), StorePage(), CartPage(), ProfilePage()]),
@@ -36,7 +37,7 @@ class _bottomnavbarState extends State<bottomnavbar> {
       height: displayWidth * 0.2,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
+        color: myColors.primaryColor,
       ),
       child: Padding(
         padding: const EdgeInsets.all(2.0),

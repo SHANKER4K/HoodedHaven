@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
 class myColors {
-  static Color primaryColor = Colors.white;
-  static Color secoundColor = Color.fromARGB(255, 202, 201, 201);
+  static Color? primaryColor = Colors.grey[50];
+  static Color? secoundColor = Colors.grey[300];
 }

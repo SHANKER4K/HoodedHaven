@@ -9,7 +9,7 @@ import 'package:hoodedhaven/tools/Products/Store.dart';
 import 'package:hoodedhaven/tools/Profile.dart';
 import 'package:hoodedhaven/tools/ResposiveSize.dart';
 import 'package:provider/provider.dart';
-import '../tools/ResposiveSize.dart';
+import '../../tools/ResposiveSize.dart';
 
 class Favorite extends StatefulWidget {
   const Favorite({super.key});
