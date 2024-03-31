@@ -126,6 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                                 Icons.lock_outline,
                                 color: Colors.white.withOpacity(.8),
                               ),
+                              
                               border: InputBorder.none,
                               hintMaxLines: 1,
                               hintText: "Password",

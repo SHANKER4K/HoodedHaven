@@ -150,13 +150,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                     Icons.lock_outline,
                                     color: Colors.white.withOpacity(.8),
                                   ),
-                                  suffixIcon: IconButton(
-                                    icon: Icon(_obscureText
-                                        ? Icons.visibility
-                                        : Icons.visibility_off),
-                                    onPressed: () => setState(
-                                        () => _obscureText = !_obscureText),
-                                  ),
                                   border: InputBorder.none,
                                   hintMaxLines: 1,
                                   hintText: "Password",
