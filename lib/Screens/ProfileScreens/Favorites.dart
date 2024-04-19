@@ -211,8 +211,45 @@ class customSearch extends SearchDelegate {
     return ListView.builder(
         itemCount: Matched.length,
         itemBuilder: ((context, index) {
-          return ListTile(
-            title: Text(favorites.elementAt(index).title.toString()),
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          ProductPage(product: favorites[index])));
+            },
+            child: Column(
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      favorites.elementAt(index).imagepath.toString(),
+                      height: 100.h,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 10),
+                        Text(Matched.elementAt(index).title.toString()),
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "US \$" +
+                                  favorites.elementAt(index).price.toString(),
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
           );
         }));
   }
@@ -228,8 +265,36 @@ class customSearch extends SearchDelegate {
     return ListView.builder(
         itemCount: Matched.length,
         itemBuilder: ((context, index) {
-          return ListTile(
-            title: Text(favorites.elementAt(index).title.toString()),
+          return Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    favorites.elementAt(index).imagepath.toString(),
+                    height: 100.h,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 10),
+                      Text(favorites.elementAt(index).title.toString()),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "US \$" +
+                                favorites.elementAt(index).price.toString(),
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ],
           );
         }));
   }

@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
           home: GetStartedPage(),
           routes: {
             '/diveinpage': (context) => const GetStartedPage(),
-            '/loginpage': (context) => const LoginPage(),
+            '/loginpage': (context) =>  LoginPage(),
             '/bottomnavbar': (context) => const bottomnavbar(),
             '/home': (context) => HomePage(),
             '/store': (context) => const StorePage(),
