@@ -30,10 +30,10 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   google_nav_bar: ^5.0.6
-  google_fonts: ^2.1.0
+  google_fonts: ^6.2.1
   flutter_svg: ^0.22.0
-  passwordfield: 
-  flutter_screenutil: 
+  passwordfield: ^0.2.0
+  flutter_screenutil: ^5.9.0
   flutter:
     sdk: flutter
   # The following adds the Cupertino Icons font to your application.
@@ -41,9 +41,16 @@ dependencies:
   cupertino_icons: ^1.0.2
   responsive_framework: ^1.0.0
   drop_shadow_image: ^0.9.1
-  flutter_colorpicker: 
-  provider:
+  flutter_colorpicker: ^1.0.3
+  provider: ^6.1.2
   flex_color_picker: ^3.0.2
+  firebase_core: ^2.30.0
+  cloud_firestore: ^4.17.0
+  firebase_storage: ^11.7.2
+  firebase_messaging: ^14.8.2
+  firebase_auth: ^4.19.2
+  google_sign_in: ^6.2.1
+  awesome_dialog: ^3.2.0
 
 dev_dependencies:
   flutter_test:

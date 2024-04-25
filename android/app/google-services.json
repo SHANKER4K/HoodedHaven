@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "104493679267",
+    "project_id": "hoodedhaven-eab8b",
+    "storage_bucket": "hoodedhaven-eab8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104493679267:android:52c607f7d438637244f516",
+        "android_client_info": {
+          "package_name": "com.example.hoodedhaven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104493679267-gtmpkv3r6oli4g0cnpmu2f70esgprr1l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hoodedhaven",
+            "certificate_hash": "ce347622957740e3358eddc209b7ac4d6c1bb8c9"
+          }
+        },
+        {
+          "client_id": "104493679267-0crnpoiuscochf2nq2h49ajlo3c11ou6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ3LR4vFSGSp6xisSg6Uldah6Sq3y33FY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104493679267-0crnpoiuscochf2nq2h49ajlo3c11ou6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "104493679267-mrekc2k28g4kbpks7tndqo27fne59ipk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hoodedhaven"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
