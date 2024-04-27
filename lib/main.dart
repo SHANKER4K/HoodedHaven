@@ -7,11 +7,12 @@ import 'package:hoodedhaven/Screens/ProfileScreens/Favorites.dart';
 import 'package:hoodedhaven/Screens/GetStartedPage.dart';
 import 'package:hoodedhaven/Screens/HomePage.dart';
 import 'package:hoodedhaven/Screens/LoginPage.dart';
-import 'package:hoodedhaven/Screens/LoginPage.dart';
+//import 'package:hoodedhaven/Screens/LoginPage.dart';
 import 'package:hoodedhaven/Screens/ProfileScreens/accountSettings.dart';
 import 'package:hoodedhaven/Screens/ProfileScreens/viewOrdersHistory.dart';
 import 'package:hoodedhaven/Screens/RegisterPage.dart';
 import 'package:hoodedhaven/Screens/StorePage.dart';
+import 'package:hoodedhaven/Screens/categories_page.dart';
 import 'package:hoodedhaven/Screens/successVerification.dart';
 import 'package:hoodedhaven/tools/Products/Store.dart';
 import 'package:hoodedhaven/tools/Profile.dart';
@@ -62,6 +63,7 @@ class _MyAppState extends State<MyApp> {
           title: "Hooded Haven",
           home: FirebaseAuth.instance.currentUser == null ? GetStartedPage() : bottomnavbar() ,
           routes: {
+            '/categoriespage':(context) => const CategoriesPage(),
             '/diveinpage': (context) => const GetStartedPage(),
             '/register': (context) => const Register(),
             '/loginpage': (context) => LoginPage(),

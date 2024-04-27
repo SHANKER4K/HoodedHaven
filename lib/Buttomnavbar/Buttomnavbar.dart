@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:hoodedhaven/Screens/CartPage.dart';
 import 'package:hoodedhaven/Screens/ProfilePage.dart';
+import 'package:hoodedhaven/Screens/categories_page.dart';
 import 'package:hoodedhaven/tools/myColor.dart';
 import '../Screens/HomePage.dart';
 import '../Screens/StorePage.dart';
@@ -25,19 +26,19 @@ class _bottomnavbarState extends State<bottomnavbar> {
           backgroundColor: myColors.primaryColor,
           body: IndexedStack(
               index: currentIndex,
-              children: [HomePage(), StorePage(), CartPage(), ProfilePage()]),
-          bottomNavigationBar: Bottomnavbar()),
+              children: [HomePage(), CategoriesPage(),StorePage(), CartPage(), ProfilePage()]),
+          bottomNavigationBar: Bottomnavbar()
+      ),
     );
   }
 
   Container Bottomnavbar() {
     double displayWidth = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: displayWidth * .05),
+
       height: displayWidth * 0.2,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: myColors.primaryColor,
+        color: myColors.secoundColor,
       ),
       child: Padding(
         padding: const EdgeInsets.all(2.0),
@@ -54,6 +55,9 @@ class _bottomnavbarState extends State<bottomnavbar> {
           tabs: [
             const GButton(
               icon: Icons.home_rounded,
+            ),
+            const GButton(
+              icon: Icons.category,
             ),
             const GButton(
               icon: Icons.store_mall_directory,
