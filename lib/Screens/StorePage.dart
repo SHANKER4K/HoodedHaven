@@ -1,6 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:hoodedhaven/Screens/HomePage.dart';
+import 'package:hoodedhaven/Screens/categories_page.dart';
 import 'package:hoodedhaven/tools/myColor.dart';
 import '../tools/Products/Store.dart';
 import '../tools/ResposiveSize.dart';
@@ -20,15 +25,26 @@ class _StorePageState extends State<StorePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text(
-              "Products",
-              style: GoogleFonts.jockeyOne(
-                  fontWeight: FontWeight.bold, fontSize: 28.sp),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            height:70,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Products",
+                  style: GoogleFonts.jockeyOne(
+                      fontWeight: FontWeight.bold, fontSize: 28.sp),
+                ),
+                TextButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoriesPage(),));
+                },
+                child: const Icon(Icons.category,)),
+              ],
             ),
           ),
           product_UI(),
+
         ],
       ),
     );

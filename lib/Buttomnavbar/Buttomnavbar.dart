@@ -26,7 +26,7 @@ class _bottomnavbarState extends State<bottomnavbar> {
           backgroundColor: myColors.primaryColor,
           body: IndexedStack(
               index: currentIndex,
-              children: [HomePage(), CategoriesPage(),StorePage(), CartPage(), ProfilePage()]),
+              children: [HomePage(),StorePage(), CartPage(), ProfilePage()]),
           bottomNavigationBar: Bottomnavbar()
       ),
     );
@@ -56,9 +56,7 @@ class _bottomnavbarState extends State<bottomnavbar> {
             const GButton(
               icon: Icons.home_rounded,
             ),
-            const GButton(
-              icon: Icons.category,
-            ),
+
             const GButton(
               icon: Icons.store_mall_directory,
             ),
