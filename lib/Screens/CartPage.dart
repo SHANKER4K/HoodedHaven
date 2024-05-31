@@ -4,6 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hoodedhaven/Screens/ProductPage.dart';
+import 'package:hoodedhaven/Screens/UserScreens_and_payment/AddAddress.dart';
+import 'package:hoodedhaven/Screens/UserScreens_and_payment/AddCard.dart';
 import 'package:hoodedhaven/tools/Products/Store.dart';
 import '../tools/ResposiveSize.dart';
 import '../tools/myColor.dart';
@@ -206,7 +208,23 @@ class _CartPageState extends State<CartPage> {
                 ],
               ),
               MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  totalPrice() != 0
+                      ? Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddAddress(),
+                          ),
+                        )
+                      : null;
+
+                  //  Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => AddCard(),
+                  //   ),
+                  // );
+                },
                 child: Text("Pay now"),
               )
             ],

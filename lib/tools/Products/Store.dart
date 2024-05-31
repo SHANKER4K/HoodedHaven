@@ -32,6 +32,7 @@ class Store extends ChangeNotifier {
   static List<Product> promo = [
     ...products.where((element) => element.promoprice != null)
   ];
+  static List<Product> Featured = [];
 
   final List cart = [];
   //addToCart

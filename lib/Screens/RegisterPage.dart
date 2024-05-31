@@ -96,115 +96,117 @@ class _RegisterState extends State<Register> {
     }
     return Scaffold(
         backgroundColor: Colors.grey[100],
-        body: Column(
-          children: [
-            //icon
-            Center(
-              child: SizedBox(
-                  height: 250.h,
-                  child: Image.asset(
-                    "assets/hoodie (3).png",
-                    width: 180.w,
-                  )),
-            ),
-            //welcome
-            const Text("Welcome to Hooded Haven",
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
-            SizedBox(height: 10.h),
-            //username
-            inputs(Icons.person, "Email",_email,AutovalidateMode.onUserInteraction,_emailKey,validateEmail),
-            SizedBox(height: 10.h),
-            //password
-            inputs(Icons.lock, "Password",_password,AutovalidateMode.onUserInteraction,_passwordKey,validatePassword),
-            SizedBox(height: 10.h),
-            //confirm password
-            inputs(Icons.lock, "Confirm Password",_confirm ,AutovalidateMode.onUserInteraction,_confirmKey, confirmPassword),
-            //signin button
-            SizedBox(height: 10.h),
-            Container(
-              width: 270.w,
-              height: 50.h,
-              child: Form(
-                child: ElevatedButton(
-                  onPressed: () async {
-
-                    if( _emailKey.currentState!.validate() && _passwordKey.currentState!.validate() && _confirmKey.currentState!.validate() ){
-
-                    try {
-                      final credential = await FirebaseAuth.instance
-                          .createUserWithEmailAndPassword(
-                        email: _email.text,
-                        password: _password.text,
-                      );
-                      Navigator.pushReplacementNamed(context,'/verify');
-
-                    } on FirebaseAuthException catch (e) {
-                      if (e.code == 'weak-password') {
-                        print('The password provided is too weak.');
-                      } else if (e.code == 'email-already-in-use') {
-                        print('The account already exists for that email.');
-                      }
-                    } catch (e) {
-                      print(e);
-                    }
-                    }
-                  },                    // register with firebase
-                  style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(Colors.black)),
-                  child: const Text(
-                    "Register",
-                  ),
-                ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              //icon
+              Center(
+                child: SizedBox(
+                    height: 250.h,
+                    child: Image.asset(
+                      "assets/hoodie (3).png",
+                      width: 180.w,
+                    )),
               ),
-            ),
-            //devider
-            Row(
-              children: [
-                const Expanded(child: Divider()),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text("Or connect with"),
-                ),
-                const Expanded(child: Divider())
-              ],
-            ),
-            SizedBox(height: 15,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                GestureDetector(
-                  onTap: () {signInWithGoogle();},
-                  child: Container(
-                    height: 80.r,
-                    width: 80.r,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: SvgPicture.string(
-                        svgGoogle,
-                      ),
+              //welcome
+              const Text("Welcome to Hooded Haven",
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+              SizedBox(height: 10.h),
+              //username
+              inputs(Icons.person, "Email",_email,AutovalidateMode.onUserInteraction,_emailKey,validateEmail),
+              SizedBox(height: 10.h),
+              //password
+              inputs(Icons.lock, "Password",_password,AutovalidateMode.onUserInteraction,_passwordKey,validatePassword),
+              SizedBox(height: 10.h),
+              //confirm password
+              inputs(Icons.lock, "Confirm Password",_confirm ,AutovalidateMode.onUserInteraction,_confirmKey, confirmPassword),
+              //signin button
+              SizedBox(height: 10.h),
+              Container(
+                width: 270.w,
+                height: 50.h,
+                child: Form(
+                  child: ElevatedButton(
+                    onPressed: () async {
+        
+                      if( _emailKey.currentState!.validate() && _passwordKey.currentState!.validate() && _confirmKey.currentState!.validate() ){
+        
+                      try {
+                        final credential = await FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                          email: _email.text,
+                          password: _password.text,
+                        );
+                        Navigator.pushReplacementNamed(context,'/verify');
+        
+                      } on FirebaseAuthException catch (e) {
+                        if (e.code == 'weak-password') {
+                          print('The password provided is too weak.');
+                        } else if (e.code == 'email-already-in-use') {
+                          print('The account already exists for that email.');
+                        }
+                      } catch (e) {
+                        print(e);
+                      }
+                      }
+                    },                    // register with firebase
+                    style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(Colors.black)),
+                    child: const Text(
+                      "Register",
                     ),
                   ),
                 ),
-              ],
-            ),
-            SizedBox(
-              height: 25.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("Have an account?"),
-                TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Text("Log in"))
-              ],
-            )
-          ],
+              ),
+              //devider
+              Row(
+                children: [
+                  const Expanded(child: Divider()),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text("Or connect with"),
+                  ),
+                  const Expanded(child: Divider())
+                ],
+              ),
+              SizedBox(height: 15,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: () {signInWithGoogle();},
+                    child: Container(
+                      height: 80.r,
+                      width: 80.r,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: SvgPicture.string(
+                          svgGoogle,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 25.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("Have an account?"),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text("Log in"))
+                ],
+              )
+            ],
+          ),
         ));
   }
 

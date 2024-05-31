@@ -1,0 +1,333 @@
+@startuml
+set namespaceSeparator ::
+
+class "hoodedhaven::Buttomnavbar::Buttomnavbar.dart::bottomnavbar" {
+  +State<bottomnavbar> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Buttomnavbar::Buttomnavbar.dart::bottomnavbar"
+
+class "hoodedhaven::Buttomnavbar::Buttomnavbar.dart::_bottomnavbarState" {
+  +int currentIndex
+  +Widget build()
+  +Container Bottomnavbar()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Buttomnavbar::Buttomnavbar.dart::_bottomnavbarState"
+
+class "hoodedhaven::Buttomnavbar::nav.dart::BottomNav" {
+  +State<BottomNav> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Buttomnavbar::nav.dart::BottomNav"
+
+class "hoodedhaven::Buttomnavbar::nav.dart::_BottomNavState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Buttomnavbar::nav.dart::_BottomNavState"
+
+class "hoodedhaven::firebase_options.dart::DefaultFirebaseOptions" {
+  {static} +FirebaseOptions web
+  {static} +FirebaseOptions android
+  {static} +FirebaseOptions ios
+  {static} +FirebaseOptions macos
+  {static} +FirebaseOptions windows
+  {static} +FirebaseOptions currentPlatform
+}
+
+"hoodedhaven::firebase_options.dart::DefaultFirebaseOptions" o-- "firebase_core_platform_interface::firebase_core_platform_interface.dart::FirebaseOptions"
+
+class "hoodedhaven::main.dart::MyApp" {
+  +State<MyApp> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::main.dart::MyApp"
+
+class "hoodedhaven::main.dart::_MyAppState" {
+  +void initState()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::main.dart::_MyAppState"
+
+class "hoodedhaven::Screens::CartPage.dart::CartPage" {
+  +State<CartPage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::CartPage.dart::CartPage"
+
+class "hoodedhaven::Screens::CartPage.dart::_CartPageState" {
+  +double totalPrice()
+  +Widget build()
+  +Expanded product_in_Card()
+  +Center payBar()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::CartPage.dart::_CartPageState"
+
+class "hoodedhaven::Screens::categories_page.dart::CategoriesPage" {
+  +State<CategoriesPage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::categories_page.dart::CategoriesPage"
+
+class "hoodedhaven::Screens::categories_page.dart::_CategoriesPageState" {
+  -List<String> _categories
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::categories_page.dart::_CategoriesPageState"
+
+class "hoodedhaven::Screens::GetStartedPage.dart::GetStartedPage" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "hoodedhaven::Screens::GetStartedPage.dart::GetStartedPage"
+
+class "hoodedhaven::Screens::HomePage.dart::HomePage" {
+  +State<HomePage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::HomePage.dart::HomePage"
+
+class "hoodedhaven::Screens::HomePage.dart::_HomePageState" {
+  +Widget build()
+  +Container promo_product_info()
+  +Container Promotion()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::HomePage.dart::_HomePageState"
+
+class "hoodedhaven::Screens::LoginPage.dart::LoginPage" {
+  +State<LoginPage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::LoginPage.dart::LoginPage"
+
+class "hoodedhaven::Screens::LoginPage.dart::_LoginPageState" {
+  +Widget build()
+  +Container inputs()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::LoginPage.dart::_LoginPageState"
+
+class "hoodedhaven::Screens::ProductPage.dart::ProductPage" {
+  +Product product
+  +State<ProductPage> createState()
+}
+
+"hoodedhaven::Screens::ProductPage.dart::ProductPage" o-- "hoodedhaven::tools::Products::Product.dart::Product"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::ProductPage.dart::ProductPage"
+
+class "hoodedhaven::Screens::ProductPage.dart::_ProductPageState" {
+  -int _quantity
+  -List<bool> _sellections
+  -List<Text> _sizes
+  +List<Color> colors
+  -int _selectedcolor
+  -int _selectedsize
+  +int index
+  -bool _favorite
+  +void addToCart()
+  +void addToFavorite()
+  +void removeFromFavorite()
+  +List<Product> getfavorites()
+  +Widget build()
+  +Container shoppingBar()
+  +AppBar appBar()
+  +Padding favorite_add_and_remove()
+  +Center AddToCart()
+  +Container Products_info()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::ProductPage.dart::_ProductPageState"
+
+class "hoodedhaven::Screens::ProfilePage.dart::ProfilePage" {
+  +State<ProfilePage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::ProfilePage.dart::ProfilePage"
+
+class "hoodedhaven::Screens::ProfilePage.dart::_ProfilePage" {
+  +File? img
+  +Widget build()
+  +Padding List_Tile()
+  +dynamic pickimage()
+}
+
+"hoodedhaven::Screens::ProfilePage.dart::_ProfilePage" o-- "dart::io::File"
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::ProfilePage.dart::_ProfilePage"
+
+class "hoodedhaven::Screens::ProfileScreens::accountSettings.dart::AccountSettings" {
+  +State<AccountSettings> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::ProfileScreens::accountSettings.dart::AccountSettings"
+
+class "hoodedhaven::Screens::ProfileScreens::accountSettings.dart::_AccountSettings" {
+  +File? img
+  +TextEditingController name
+  +TextEditingController email
+  +TextEditingController password
+  +TextEditingController bio
+  -String _name
+  -String _email
+  -String _password
+  -String _bio
+  +dynamic pickimage()
+  +Widget build()
+}
+
+"hoodedhaven::Screens::ProfileScreens::accountSettings.dart::_AccountSettings" o-- "dart::io::File"
+"hoodedhaven::Screens::ProfileScreens::accountSettings.dart::_AccountSettings" o-- "flutter::src::widgets::editable_text.dart::TextEditingController"
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::ProfileScreens::accountSettings.dart::_AccountSettings"
+
+class "hoodedhaven::Screens::ProfileScreens::Favorites.dart::Favorite" {
+  +State<Favorite> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::ProfileScreens::Favorites.dart::Favorite"
+
+class "hoodedhaven::Screens::ProfileScreens::Favorites.dart::_FavoriteState" {
+  +List<Product> getfavorites()
+  +Widget build()
+  +GestureDetector product_in_Favorite()
+  +AppBar appBar()
+  +Padding search()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::ProfileScreens::Favorites.dart::_FavoriteState"
+
+class "hoodedhaven::Screens::ProfileScreens::Favorites.dart::customSearch" {
+  +List<Product> favorites
+  +List<Widget> buildActions()
+  +Widget? buildLeading()
+  +Widget buildSuggestions()
+  +Widget buildResults()
+}
+
+"flutter::src::material::search.dart::SearchDelegate" <|-- "hoodedhaven::Screens::ProfileScreens::Favorites.dart::customSearch"
+
+class "hoodedhaven::Screens::ProfileScreens::viewOrdersHistory.dart::ViewOrdersHistory" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "hoodedhaven::Screens::ProfileScreens::viewOrdersHistory.dart::ViewOrdersHistory"
+
+class "hoodedhaven::Screens::RegisterPage.dart::Register" {
+  +State<Register> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::RegisterPage.dart::Register"
+
+class "hoodedhaven::Screens::RegisterPage.dart::_RegisterState" {
+  +String svgFacebook
+  +String svgGoogle
+  +void initState()
+  +Widget build()
+  +Container inputs()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::RegisterPage.dart::_RegisterState"
+
+class "hoodedhaven::Screens::StorePage.dart::StorePage" {
+  +State<StorePage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::StorePage.dart::StorePage"
+
+class "hoodedhaven::Screens::StorePage.dart::_StorePageState" {
+  +Widget build()
+  +Expanded product_UI()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::StorePage.dart::_StorePageState"
+
+class "hoodedhaven::Screens::successVerification.dart::Success_Verify" {
+  +State<Success_Verify> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::successVerification.dart::Success_Verify"
+
+class "hoodedhaven::Screens::successVerification.dart::_Success_VerifyState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::successVerification.dart::_Success_VerifyState"
+
+class "hoodedhaven::Screens::verifyEmail.dart::VerifyEmail" {
+  +State<VerifyEmail> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "hoodedhaven::Screens::verifyEmail.dart::VerifyEmail"
+
+class "hoodedhaven::Screens::verifyEmail.dart::_VerifyEmailState" {
+  -FirebaseAuth _auth
+  -User _user
+  -Timer _timer
+  +void initState()
+  +void dispose()
+  +Widget build()
+  +dynamic checkVerification()
+}
+
+"hoodedhaven::Screens::verifyEmail.dart::_VerifyEmailState" o-- "firebase_auth::firebase_auth.dart::FirebaseAuth"
+"hoodedhaven::Screens::verifyEmail.dart::_VerifyEmailState" o-- "firebase_auth::firebase_auth.dart::User"
+"hoodedhaven::Screens::verifyEmail.dart::_VerifyEmailState" o-- "dart::async::Timer"
+"flutter::src::widgets::framework.dart::State" <|-- "hoodedhaven::Screens::verifyEmail.dart::_VerifyEmailState"
+
+class "hoodedhaven::tools::myColor.dart::myColors" {
+  {static} +Color? primaryColor
+  {static} +Color? secoundColor
+}
+
+"hoodedhaven::tools::myColor.dart::myColors" o-- "dart::ui::Color"
+
+class "hoodedhaven::tools::Products::Product.dart::Product" {
+  +String? title
+  +int? price
+  +int? promoprice
+  +String? imagepath
+  +String size
+  +Color color
+  +int quantity
+  +String? reviews
+  +bool equals()
+}
+
+"hoodedhaven::tools::Products::Product.dart::Product" o-- "dart::ui::Color"
+
+class "hoodedhaven::tools::Products::Store.dart::Store" {
+  {static} +List<Product> products
+  {static} +List<Product> promo
+  +List<dynamic> cart
+  +void addToCart()
+  +void removeFromCart()
+  +double totalPrice()
+}
+
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "hoodedhaven::tools::Products::Store.dart::Store"
+
+class "hoodedhaven::tools::Profile.dart::Profile" {
+  -Image? _image
+  -String? _username
+  -List<Product> _favorites
+  +Image? image
+  +Image setImage
+  +String? username
+  +String setUsername
+  +List<Product> favorites
+  +void addToFavorite()
+  +void removeFromFavorite()
+}
+
+"hoodedhaven::tools::Profile.dart::Profile" o-- "flutter::src::widgets::image.dart::Image"
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "hoodedhaven::tools::Profile.dart::Profile"
+
+class "hoodedhaven::tools::ResposiveSize.dart::ResponsiveSize" {
+  {static} +double responsiveSize()
+}
+
+
+@enduml
