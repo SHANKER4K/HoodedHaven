@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hoodedhaven/Screens/LoginPage.dart';
@@ -19,6 +20,7 @@ class _ProfilePage extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Center(
             child: SizedBox(
@@ -45,13 +47,14 @@ class _ProfilePage extends State<ProfilePage> {
           Padding(
             padding: const EdgeInsets.only(left: 16.0, right: 16, top: 16),
             child: Material(
+              color: Colors.black,
               elevation: 1.0,
               borderRadius: BorderRadius.circular(8.0),
               child: ListTile(
-                trailing: const Icon(Icons.keyboard_arrow_right_rounded),
-                title: Text(
+                trailing: const Icon(Icons.keyboard_arrow_right_rounded,color: Colors.white,size: 30,),
+                title: const Text(
                   "Sign Out",
-                  style: GoogleFonts.roboto(fontSize: 16),
+                  style:TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold) ,
                 ),
                 onTap: () {
                   _signOut(context);
@@ -69,10 +72,10 @@ class _ProfilePage extends State<ProfilePage> {
     return Padding(
       padding: const EdgeInsets.only(left: 16.0, right: 16, top: 16),
       child: Material(
-        elevation: 1.0,
+        elevation: 4.0,
         borderRadius: BorderRadius.circular(8.0),
         child: ListTile(
-          trailing: const Icon(Icons.keyboard_arrow_right_rounded),
+          trailing: const Icon(Icons.keyboard_arrow_right_rounded,size: 30,),
           title: Text(
             title,
             style: GoogleFonts.roboto(fontSize: 16),

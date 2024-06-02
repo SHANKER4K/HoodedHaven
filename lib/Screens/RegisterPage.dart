@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hoodedhaven/Screens/LoginPage.dart';
@@ -153,20 +154,20 @@ class _RegisterState extends State<Register> {
                     style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(Colors.black)),
                     child: const Text(
-                      "Register",
+                      "Register",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700,color: Colors.white),
                     ),
                   ),
                 ),
               ),
               //devider
-              Row(
+              const Row(
                 children: [
-                  const Expanded(child: Divider()),
-                  const Padding(
+                  Expanded(child: Divider()),
+                  Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text("Or connect with"),
                   ),
-                  const Expanded(child: Divider())
+                  Expanded(child: Divider())
                 ],
               ),
               SizedBox(height: 15,),
