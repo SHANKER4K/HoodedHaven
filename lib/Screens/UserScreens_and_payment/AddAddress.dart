@@ -15,7 +15,7 @@ class AddAddress extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Address'),
+        title: const Text('Add Address'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -99,102 +99,104 @@ class _AddressFormState extends State<AddressForm> {
                           user.selectedAddress = _selectedaddres;
                           Navigator.popAndPushNamed(context, "/addCard");
                         },
-                        child: Text("Next")))
+                        child: const Text("Next")))
               ],
             );
     });
   }
 
-  Form addnewAddress(Userinformation user, BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          TextFormField(
-            controller: _fullNameController,
-            decoration: InputDecoration(labelText: 'Full Name'),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your full name';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            controller: _streetAddressController,
-            decoration: InputDecoration(labelText: 'Street Address'),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your street address';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            controller: _cityController,
-            decoration: InputDecoration(labelText: 'City'),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your city';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            controller: _postalCodeController,
-            decoration: InputDecoration(labelText: 'Postal Code'),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your postal code';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            controller: _countryController,
-            decoration: InputDecoration(labelText: 'Country'),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your country';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            controller: _phoneNumberController,
-            decoration: InputDecoration(labelText: 'Phone Number'),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your phone number';
-              }
-              return null;
-            },
-          ),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                // Save address
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Address saved')),
-                );
-                user.addAdress(
-                    _fullNameController.text,
-                    _streetAddressController.text,
-                    _cityController.text,
-                    _postalCodeController.text,
-                    _postalCodeController.text,
-                    _phoneNumberController.text);
-                AddnewAddressList.clear();
-                _formKey.currentState!.reset();
-              }
-            },
-            child: Text('Save Address'),
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white, backgroundColor: Colors.black, // Text color
+  Widget addnewAddress(Userinformation user, BuildContext context) {
+    return SingleChildScrollView(
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            TextFormField(
+              controller: _fullNameController,
+              decoration: const InputDecoration(labelText: 'Full Name'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your full name';
+                }
+                return null;
+              },
             ),
-          ),
-        ],
+            TextFormField(
+              controller: _streetAddressController,
+              decoration: const InputDecoration(labelText: 'Street Address'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your street address';
+                }
+                return null;
+              },
+            ),
+            TextFormField(
+              controller: _cityController,
+              decoration: const InputDecoration(labelText: 'City'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your city';
+                }
+                return null;
+              },
+            ),
+            TextFormField(
+              controller: _postalCodeController,
+              decoration: const InputDecoration(labelText: 'Postal Code'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your postal code';
+                }
+                return null;
+              },
+            ),
+            TextFormField(
+              controller: _countryController,
+              decoration: const InputDecoration(labelText: 'Country'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your country';
+                }
+                return null;
+              },
+            ),
+            TextFormField(
+              controller: _phoneNumberController,
+              decoration: const InputDecoration(labelText: 'Phone Number'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your phone number';
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  // Save address
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Address saved')),
+                  );
+                  user.addAdress(
+                      _fullNameController.text,
+                      _streetAddressController.text,
+                      _cityController.text,
+                      _postalCodeController.text,
+                      _postalCodeController.text,
+                      _phoneNumberController.text);
+                  AddnewAddressList.clear();
+                  _formKey.currentState!.reset();
+                }
+              },
+              child: Text('Save Address'),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white, backgroundColor: Colors.black, // Text color
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

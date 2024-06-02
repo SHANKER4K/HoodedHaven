@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hoodedhaven/Screens/RegisterPage.dart';
@@ -185,22 +186,23 @@ class _LoginPageState extends State<LoginPage> {
                             MaterialStatePropertyAll(Colors.black)),
                     child: const Text(
                       "Sign in",
+                      style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w700),
                     ),
                   ),
                 ),
               ),
               //devider
-              Row(
+              const Row(
                 children: [
-                  const Expanded(child: Divider()),
-                  const Padding(
+                  Expanded(child: Divider()),
+                  Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text("Or connect with"),
                   ),
-                  const Expanded(child: Divider())
+                  Expanded(child: Divider())
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
